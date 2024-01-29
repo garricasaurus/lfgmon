@@ -1,0 +1,9 @@
+## Interface: 100205
+## Version: 1.0.1
+## SavedVariables: Conf
+## Title: LFG Monitor
+## Notes: Monitor LFG for extra rewards
+## IconTexture: Interface/ICONS/Ability_Hunter_MasterMarksman.PNG
+## Author: garric
+
+main.lua
