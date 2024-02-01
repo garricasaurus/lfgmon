@@ -19,8 +19,12 @@ function checker:GetShortages()
         end
     end
 
-    checkFn(GetNumRandomDungeons(), GetLFGRandomDungeonInfo)
-    checkFn(GetNumRFDungeons(), GetRFDungeonInfo)
+    if LfgMonConf.monitorDungeons then
+        checkFn(GetNumRandomDungeons(), GetLFGRandomDungeonInfo)
+    end
+    if LfgMonConf.monitorRaids then
+        checkFn(GetNumRFDungeons(), GetRFDungeonInfo)
+    end
 
     return result
 end

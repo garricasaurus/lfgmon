@@ -6,11 +6,14 @@
 ## IconTexture: Interface/ICONS/Ability_Hunter_MasterMarksman.PNG
 ## Author: garric
 
+strings.lua
+
 core/config.lua
 core/checker.lua
 core/role.lua
 
 ui/info.lua
 ui/icon.lua
+ui/settings.lua
 
 main.lua
