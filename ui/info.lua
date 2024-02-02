@@ -8,15 +8,6 @@ local tankIcon = CreateAtlasMarkup("roleicon-tiny-tank", 16, 16)
 local healerIcon = CreateAtlasMarkup("roleicon-tiny-healer", 16, 16)
 local damageIcon = CreateAtlasMarkup("roleicon-tiny-dps", 16, 16)
 
-local textureFormat = {
-    anchor = Enum.TooltipTextureAnchor.LeftCenter,
-    region = Enum.TooltipTextureRelativeRegion.RightLine,
-    margin = {
-        left = 10,
-        right = 10,
-    },
-}
-
 function info:SetTooltipContent(shortages)
     GameTooltip:AddLine("Extra rewards available", 0, 1, 1)
     for dungeonName, shortage in pairs(shortages) do

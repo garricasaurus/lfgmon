@@ -54,10 +54,4 @@ function main:canParticipate(shortages)
     return false
 end
 
-addon.defaults = {
-    monitorDungeons = true,
-    monitorRaids = true,
-    checkFrequency = 60,
-}
-
 addon.main = main
