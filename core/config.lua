@@ -15,6 +15,7 @@ addon.defaults = {
     monitorDungeons = true,
     monitorRaids = true,
     checkFrequency = 60,
+    playAlert = false,
 }
 
 addon.config = config

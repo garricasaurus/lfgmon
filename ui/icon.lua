@@ -12,6 +12,10 @@ function icon:SetShown(shown)
     self.frame:SetShown(shown)
 end
 
+function icon:IsShown()
+    return self.frame:IsShown()
+end
+
 function icon:ResetPosition()
     self.frame:ClearAllPoints()
     self.frame:SetPoint("CENTER")

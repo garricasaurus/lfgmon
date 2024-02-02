@@ -11,6 +11,7 @@ strings.lua
 core/config.lua
 core/checker.lua
 core/role.lua
+core/notify.lua
 
 ui/info.lua
 ui/icon.lua

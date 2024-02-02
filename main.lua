@@ -6,6 +6,7 @@ local config = addon.config
 local checker = addon.checker
 local role = addon.role
 local icon = addon.icon
+local notify = addon.notify
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
@@ -39,7 +40,12 @@ function main:updateShortages()
     if IsInGroup(LE_PARTY_CATEGORY_HOME) then
         icon:SetShown(false)
     else
-        icon:SetShown(self:canParticipate(shortages))
+        local shownBefore = icon:IsShown()
+        local shownAfter = self:canParticipate(shortages)
+        if not shownBefore and shownAfter then
+            notify:CreateAlert()
+        end
+        icon:SetShown(shownAfter)
     end
 end
 
