@@ -12,9 +12,14 @@ function icon:SetShown(shown)
     self.frame:SetShown(shown)
 end
 
+function icon:ResetPosition()
+    self.frame:ClearAllPoints()
+    self.frame:SetPoint("CENTER")
+end
+
 function icon:createFrame()
     local frame = CreateFrame("Frame", "LfgMonIcon", UIParent)
-    frame:SetSize(32, 32)
+    frame:SetSize(40, 40)
     frame:SetPoint("CENTER")
     self:enableMouseDrag(frame)
     self:createTooltip(frame)

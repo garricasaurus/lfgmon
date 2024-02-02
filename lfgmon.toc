@@ -16,4 +16,5 @@ ui/info.lua
 ui/icon.lua
 ui/settings.lua
 
+commands.lua
 main.lua
