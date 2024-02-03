@@ -18,6 +18,14 @@ function notifier:Subscribe(callbackFn)
     table.insert(self.subscribers, callbackFn)
 end
 
+function notifier:refresh()
+    local shortages = {}
+    if not IsInGroup() then
+        shortages = self:filterRole(checker:GetShortages())
+    end
+    self:notify(shortages)
+end
+
 function notifier:notify(shortages)
     local new = self:filterNew(shortages)
     for _, subscriber in ipairs(self.subscribers) do
@@ -29,14 +37,6 @@ function notifier:notify(shortages)
         }
         subscriber(payload)
     end
-end
-
-function notifier:refresh()
-    local shortages = {}
-    if not IsInGroup(LE_PARTY_CATEGORY_HOME) then
-        shortages = self:filterRole(checker:GetShortages())
-    end
-    self:notify(shortages)
 end
 
 function notifier:filterNew(shortages)
