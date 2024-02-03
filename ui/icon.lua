@@ -1,19 +1,24 @@
 local _, addon = ...
 
-local icon = {}
-local info = addon.info
+local icon = {
+    shortages = {}
+}
 
-function icon:Create()
+local info = addon.info
+local notifier = addon.notifier
+
+function icon:Init()
     self.frame = self:createFrame()
     self.texture = self:createTexture(self.frame, "Interface/ICONS/Ability_Hunter_MasterMarksman")
+    self:SetShown(false)
+    notifier:Subscribe(function (payload)
+        self.shortages = payload.current
+        self:SetShown(addon.hasShortage(self.shortages))
+    end)
 end
 
 function icon:SetShown(shown)
     self.frame:SetShown(shown)
-end
-
-function icon:IsShown()
-    return self.frame:IsShown()
 end
 
 function icon:ResetPosition()
@@ -61,7 +66,7 @@ function icon:createTooltip(frame)
     frame:EnableMouse(true)
     frame:SetScript("OnEnter", function(s)
         GameTooltip:SetOwner(s, "ANCHOR_RIGHT")
-        info:SetTooltipContent(addon.shortages)
+        info:SetTooltipContent(self.shortages)
         GameTooltip:Show()
     end)
     frame:SetScript("OnLeave", function(s)

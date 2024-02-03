@@ -1,5 +1,5 @@
 ## Interface: 100205
-## Version: 1.0.1
+## Version: 1.0.2
 ## SavedVariables: LfgMonConf
 ## Title: LFG Monitor
 ## Notes: Monitor LFG for extra rewards
@@ -11,10 +11,12 @@ strings.lua
 core/config.lua
 core/checker.lua
 core/role.lua
-core/notify.lua
+core/notifier.lua
 
+ui/common.lua
 ui/info.lua
 ui/icon.lua
+ui/alert.lua
 ui/settings.lua
 
 commands.lua
