@@ -16,6 +16,7 @@ addon.defaults = {
     monitorRaids = true,
     checkFrequency = 60,
     playAlert = false,
+    considerLockout = true,
 }
 
 addon.config = config

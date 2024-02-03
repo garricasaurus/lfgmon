@@ -19,24 +19,28 @@ end
 local title = createText(frame, addon.SettingsTitle, "GameFontNormalLarge")
 local monitorDungeonsCheckbox = createCheckbox(frame, addon.MonitorDungeonsText)
 local monitorRaidsCheckbox = createCheckbox(frame, addon.MonitorRaidsText)
+local considerLockoutCheckbox = createCheckbox(frame, addon.ConsiderLockoutText)
 local playAlertCheckbox = createCheckbox(frame, addon.PlayAlertText)
 
 -- align controls
 title:SetPoint("TOPLEFT", 20, -20)
 monitorDungeonsCheckbox:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -40)
 monitorRaidsCheckbox:SetPoint("TOPLEFT", monitorDungeonsCheckbox, "BOTTOMLEFT", 0, -40)
-playAlertCheckbox:SetPoint("TOPLEFT", monitorRaidsCheckbox, "BOTTOMLEFT", 0, -40)
+considerLockoutCheckbox:SetPoint("TOPLEFT", monitorRaidsCheckbox, "BOTTOMLEFT", 0, -40)
+playAlertCheckbox:SetPoint("TOPLEFT", considerLockoutCheckbox, "BOTTOMLEFT", 0, -40)
 
 
 function frame:OnRefresh()
     monitorDungeonsCheckbox:SetChecked(LfgMonConf.monitorDungeons)
     monitorRaidsCheckbox:SetChecked(LfgMonConf.monitorRaids)
+    considerLockoutCheckbox:SetChecked(LfgMonConf.considerLockout)
     playAlertCheckbox:SetChecked(LfgMonConf.playAlert)
 end
 
 function frame:OnCommit()
     LfgMonConf.monitorDungeons = monitorDungeonsCheckbox:GetChecked()
     LfgMonConf.monitorRaids = monitorRaidsCheckbox:GetChecked()
+    LfgMonConf.considerLockout = considerLockoutCheckbox:GetChecked()
     LfgMonConf.playAlert = playAlertCheckbox:GetChecked()
 end
 
