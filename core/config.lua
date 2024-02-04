@@ -17,6 +17,9 @@ addon.defaults = {
     checkFrequency = 60,
     playAlert = false,
     considerLockout = true,
+    ignoreTank = false,
+    ignoreHealer = false,
+    ignoreDamage = false,
 }
 
 addon.config = config

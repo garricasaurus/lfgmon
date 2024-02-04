@@ -56,9 +56,9 @@ end
 function notifier:filterRole(shortages)
     local result = CopyTable(shortages)
     for _, shortage in pairs(result) do
-        shortage.tank = shortage.tank and role.canTank
-        shortage.healer = shortage.healer and role.canHeal
-        shortage.damage = shortage.damage and role.canDamage
+        shortage.tank = shortage.tank and role.canTank and not LfgMonConf.ignoreTank
+        shortage.healer = shortage.healer and role.canHeal and not LfgMonConf.ignoreHealer
+        shortage.damage = shortage.damage and role.canDamage and not LfgMonConf.ignoreDamage
     end
     return result
 end
