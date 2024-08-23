@@ -15,9 +15,11 @@ function main:ADDON_LOADED(addonName)
     if name ~= addonName then
         return
     end
+    LfgMonConf = LfgMonConf or addon.defaults
     -- initialize required components
     for _, comp in ipairs({
         addon.config,
+        addon.settings,
         addon.alert,
         addon.icon,
         addon.notifier

@@ -14,7 +14,7 @@ end
 addon.defaults = {
     monitorDungeons = true,
     monitorRaids = true,
-    checkFrequency = 60,
+    checkFrequency = 15,
     playAlert = false,
     considerLockout = true,
     ignoreTank = false,
