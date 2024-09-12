@@ -8,13 +8,16 @@ function checker:GetShortages()
     local checkFn = function(numDungeons, infoFn)
         for i = 1, numDungeons do
             local dungeonId, dungeonName = infoFn(i)
-            local shortage, tank, healer, damage = self:checkDungeon(dungeonId)
-            if dungeonName and shortage then
-                result[dungeonName] = {
-                    tank = tank,
-                    healer = healer,
-                    damage = damage,
-                }
+            local _, joinable = IsLFGDungeonJoinable(dungeonId)
+            if joinable then
+                local shortage, tank, healer, damage = self:checkDungeon(dungeonId)
+                if dungeonName and shortage then
+                    result[dungeonName] = {
+                        tank = tank,
+                        healer = healer,
+                        damage = damage,
+                    }
+                end
             end
         end
     end
