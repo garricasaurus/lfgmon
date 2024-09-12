@@ -1,8 +1,9 @@
 ## Interface: 110002
-## Version: 1.1.1
+## Version: 1.1.2
 ## SavedVariables: LfgMonConf
 ## Title: LFG Monitor
 ## Notes: Monitor LFG for extra rewards
+## AddonCompartmentFunc: LFGMon_OnAddonCompartmentClick
 ## IconTexture: Interface/ICONS/Ability_Hunter_MasterMarksman.PNG
 ## Author: garric
 
@@ -18,6 +19,7 @@ ui/info.lua
 ui/icon.lua
 ui/alert.lua
 ui/settings.lua
+ui/minimap.lua
 
 commands.lua
 main.lua
