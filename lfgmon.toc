@@ -1,5 +1,5 @@
-## Interface: 110005
-## Version: 1.1.3
+## Interface: 110007
+## Version: 1.1.4
 ## SavedVariables: LfgMonConf
 ## Title: LFG Monitor
 ## Notes: Monitor LFG for extra rewards
